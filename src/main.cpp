@@ -30,13 +30,19 @@ AnalogOut vref1(A5);
 AnalogOut vref2(A4);
 AnalogOut vref3(A3);
 
+void setup()
+{
+  sw.mode(PullUp);
+  for (int i = 0; i < 3; i++)
+  {
+    tb67h[i][0].period(1.0 / 30000.0); //30kHz
+    tb67h[i][1].period(1.0 / 30000.0); //30kHz
+  }
+}
 main()
 {
-
-  // put your setup code here, to run once:
-
+  setup();
   while (1)
   {
-    // put your main code here, to run repeatedly:
   }
 }
